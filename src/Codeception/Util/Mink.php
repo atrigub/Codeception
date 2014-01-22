@@ -111,7 +111,7 @@ abstract class Mink extends Module implements RemoteInterface, WebInterface
         }
 
         foreach ($headers['set-cookie'] as $cookieString) {
-            if (!stripos($cookieString, $name) === 0) {
+            if (!(stripos($cookieString, $name) === 0)) {
                 continue;
             }
             $cookiePieces = explode(';', $cookieString);
